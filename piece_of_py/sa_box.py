@@ -35,4 +35,4 @@ def get_box_content_XXX(uid):
 
     except Exception as e: print(e)
 
-    return recomm_box
+    return box_content
