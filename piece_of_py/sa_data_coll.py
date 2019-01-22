@@ -5,6 +5,7 @@
 
 import sys
 import os
+import pymysql.cursors
 
 pdir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(os.path.abspath(pdir) )
@@ -15,15 +16,12 @@ sys.path.append(os.path.abspath( sett.get_path_pwd() ))
 from sa_access import *
 access_obj = sa_db_access()
 
-sys.path.append(os.path.abspath( sett.get_path_core() ))
-from ta_calc_ma import *
-
 db_usr = access_obj.username(); db_pwd = access_obj.password(); db_name = access_obj.db_name(); db_srv = access_obj.db_server()
 
-import pymysql.cursors
-connection = pymysql.connect(host=db_srv,
-                             user=db_usr,
-                             password=db_pwd,
-                             db=db_name,
-                             charset='utf8mb4',
-                             cursorclass=pymysql.cursors.DictCursor)
+def fname(arg):
+    connection = pymysql.connect(host=db_srv,
+                                 user=db_usr,
+                                 password=db_pwd,
+                                 db=db_name,
+                                 charset='utf8mb4',
+                                 cursorclass=pymysql.cursors.DictCursor)

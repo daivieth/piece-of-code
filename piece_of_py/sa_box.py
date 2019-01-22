@@ -23,11 +23,14 @@ def get_box_content_XXX(uid):
             symbol = row[0]
 
 
-        box_content = '' +\
+        box_content = '<div class="box-top">' +\
+        '   <div class="row">'+\
         '        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">'+\
-        '            <div class="box-part">'+\
+        '            <div class="box-part sa-center-content">'+\
         '            </div>'+\
-        '        </div>'
+        '        </div>'+\
+        '   </div>'+\
+        '</div>'
 
 
         cr.close()
